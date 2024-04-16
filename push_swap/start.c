@@ -6,24 +6,21 @@
 /*   By: miguelgo <miguelgo@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 11:31:00 by miguelgo          #+#    #+#             */
-/*   Updated: 2024/04/15 21:54:44 by miguelgo         ###   ########.fr       */
+/*   Updated: 2024/04/16 20:42:40 by miguelgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long	*start(int argc, char **argv)
+char	**get_list(int argc, char **argv)
 {
-	long	*numbers;
+	char	**list;
 	int		i;
 	int		count;
-	char	**list;
-	int		c;
 
-	c = 0;
 	i = 0;
 	if (argc == 2)
-        list = ft_split(argv[1], ' ');
+		list = ft_split(argv[1], ' ');
 	else if (argc > 2)
 	{
 		list = malloc(argc * sizeof(char *));
@@ -38,6 +35,18 @@ long	*start(int argc, char **argv)
 		}
 		list[i] = NULL;
 	}
+	return (list);
+}
+
+long	*start(int argc, char **argv)
+{
+	long	*numbers;
+	int		i;
+	int		c;
+	char	**list;
+
+	c = 0;
+	list = get_list(argc, argv);
 	while (list[c] != '\0')
 	{
 		if (!check_digit(list[c]))
@@ -61,7 +70,7 @@ long	*start(int argc, char **argv)
 void	fill_stack(t_stack **stack, int number)
 {
 	t_stack	*last;
-	t_stack *current;
+	t_stack	*current;
 
 	last = malloc(sizeof(t_stack));
 	if (!last)
@@ -82,7 +91,7 @@ void	fill_stack(t_stack **stack, int number)
 		last->back = current;
 	}
 }
-	
+
 int	check_digit(char *list)
 {
 	int	i;
@@ -97,9 +106,7 @@ int	check_digit(char *list)
 		i++;
 	}
 	return (1);
-
 }
-
 
 int	check_duplicates(long *numbers)
 {

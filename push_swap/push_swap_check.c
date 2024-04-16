@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap_check.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: miguelgo <miguelgo@student.42madrid>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/16 20:29:09 by miguelgo          #+#    #+#             */
+/*   Updated: 2024/04/16 20:29:38 by miguelgo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 #include <unistd.h>
 #include <stdlib.h>
@@ -19,9 +31,7 @@ int	ft_str_is_numeric(char *str)
 	return (1);
 }
 
-
-
-long ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
 	int		i;
 	long	result;
