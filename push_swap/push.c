@@ -6,7 +6,7 @@
 /*   By: miguelgo <miguelgo@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 15:13:39 by miguelgo          #+#    #+#             */
-/*   Updated: 2024/04/17 18:05:34 by miguelgo         ###   ########.fr       */
+/*   Updated: 2024/04/17 18:53:51 by miguelgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	push(t_stack **src, t_stack **dest)
 {
 	t_stack	*tmp;
 
+	if (!(*src))
+		return ;
 	tmp = *src;
 	*src = tmp->next;
 	if (*src)

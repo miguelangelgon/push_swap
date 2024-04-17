@@ -6,7 +6,7 @@
 /*   By: miguelgo <miguelgo@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 15:07:38 by miguelgo          #+#    #+#             */
-/*   Updated: 2024/04/17 18:27:42 by miguelgo         ###   ########.fr       */
+/*   Updated: 2024/04/17 19:11:05 by miguelgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	rotate(t_stack **stack)
 	t_stack	*last;
 	t_stack	*move;
 
-	if (!(*stack)->next)
+	if ((!(*stack)->next) || (!(*stack)))
 		return ;
 	move = *stack;
 	last = find_last(stack);

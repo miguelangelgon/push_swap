@@ -6,7 +6,7 @@
 /*   By: miguelgo <miguelgo@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 16:56:02 by miguelgo          #+#    #+#             */
-/*   Updated: 2024/04/17 18:19:58 by miguelgo         ###   ########.fr       */
+/*   Updated: 2024/04/17 18:54:17 by miguelgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	swap(t_stack **stack)
 {
 	t_stack	*move;
 
-	if (!(*stack)->next || !(*stack)->next->next)
+	if (!(*stack)->next || !(*stack))
 		return ;
 	move = *stack;
 	move = move->next;

@@ -6,7 +6,7 @@
 /*   By: miguelgo <miguelgo@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:14:39 by miguelgo          #+#    #+#             */
-/*   Updated: 2024/04/17 18:31:45 by miguelgo         ###   ########.fr       */
+/*   Updated: 2024/04/17 18:47:54 by miguelgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,11 @@ void	objetives_b(t_stack	*a, t_stack *b)
 			}
 			move_a = move_a->next;
 		}
-		if (number == LONG_MIN)
+		if (number == LONG_MAX)
 			b->objetive = min_number(a);
 		else
 			b->objetive = closest;
-		number = LONG_MIN;
+		number = LONG_MAX;
 		b = b->next;
 		move_a = a;
 	}
