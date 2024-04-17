@@ -6,7 +6,7 @@
 /*   By: miguelgo <miguelgo@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 13:45:16 by miguelgo          #+#    #+#             */
-/*   Updated: 2024/04/16 20:49:21 by miguelgo         ###   ########.fr       */
+/*   Updated: 2024/04/17 18:30:44 by miguelgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,14 @@ int	main(int argc, char *argv[])
 	free(numbers);
 	if (!(check_sort(&a)))
 		sort(&a, &b);
+	t_stack	*move;
+	move = a;
+	while (move)
+	{
+		printf("%i\n", move->number);
+		move = move->next;
+
+	}
 	free_stack(&a);
 	return (0);
 }

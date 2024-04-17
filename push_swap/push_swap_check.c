@@ -6,7 +6,7 @@
 /*   By: miguelgo <miguelgo@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 20:29:09 by miguelgo          #+#    #+#             */
-/*   Updated: 2024/04/16 20:29:38 by miguelgo         ###   ########.fr       */
+/*   Updated: 2024/04/17 18:06:21 by miguelgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,18 @@ long	ft_atoi(const char *str)
 	if (sign == 1)
 		result = result * -1;
 	return (result);
+}
+
+t_stack	*get_cheapest(t_stack **stack)
+{
+	t_stack	*move;
+
+	move = *stack;
+	while (move)
+	{
+		if (move->cheapest == 1)
+			return (move);
+		move = move->next;
+	}
+	return (0);
 }

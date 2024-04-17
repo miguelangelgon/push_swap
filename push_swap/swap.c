@@ -1,40 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miguelgo <miguelgo@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/16 15:13:39 by miguelgo          #+#    #+#             */
-/*   Updated: 2024/04/17 18:05:34 by miguelgo         ###   ########.fr       */
+/*   Created: 2024/04/17 16:56:02 by miguelgo          #+#    #+#             */
+/*   Updated: 2024/04/17 18:19:58 by miguelgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push(t_stack **src, t_stack **dest)
+void	swap(t_stack **stack)
 {
-	t_stack	*tmp;
+	t_stack	*move;
 
-	tmp = *src;
-	*src = tmp->next;
-	if (*src)
-		tmp->next->back = NULL;
-	tmp->next = *dest;
-	if (*dest)
-		(*dest)->back = tmp;
-	tmp->back = NULL;
-	*dest = tmp;
+	if (!(*stack)->next || !(*stack)->next->next)
+		return ;
+	move = *stack;
+	move = move->next;
+	(*stack)->next = move->next;
+	move->next->back = *stack;
+	move->next = *stack;
+	move->back = NULL;
+	*stack = move;	
 }
 
-void	pa(t_stack **a, t_stack **b)
+void	sa(t_stack **a)
 {
-	push(b, a);
-	write(1, "pa\n", 3);
+	swap(a);
+	write(1, "sa\n", 3);
 }
 
-void	pb(t_stack **a, t_stack **b)
+void	sb(t_stack **b)
 {
-	push(a, b);
-	write(1, "pb\n", 3);
+	swap(b);
+	write(1, "sb\n", 3);
+}
+
+void	ss(t_stack **a, t_stack **b)
+{
+	swap(a);
+	swap(b);
+	write(1, "ss\n", 3);
 }

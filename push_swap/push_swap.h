@@ -6,7 +6,7 @@
 /*   By: miguelgo <miguelgo@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:36:14 by miguelgo          #+#    #+#             */
-/*   Updated: 2024/04/16 20:28:56 by miguelgo         ###   ########.fr       */
+/*   Updated: 2024/04/17 18:05:05 by miguelgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,29 @@ void			objetives_a(t_stack *a, t_stack *b);
 t_stack			*max_number(t_stack *b);
 void			calculate_cost(t_stack *a, t_stack *b);
 void			set_cheapest(t_stack *stack);
+t_stack			*find_last(t_stack **stack);
+void			rotate(t_stack **stack);
+void			move_to_upper(t_stack **stack, t_stack *cheapest,
+					char stack_name);
+void			move_to_b(t_stack **a, t_stack **b);
+void			ra(t_stack **a);
+void			rb(t_stack **b);
+void			rr(t_stack **a, t_stack **b);
+void			rotate_two(t_stack **a, t_stack **b, t_stack *cheapest, int c);
+void			reverse_rotate(t_stack **stack);
+void			rra(t_stack **a);
+void			rrb(t_stack **b);
+void			rrr(t_stack **a, t_stack **b);
+t_stack			*get_cheapest(t_stack **stack);
+void			last_three(t_stack **a);
+void			swap(t_stack **stack);
+void			sa(t_stack **a);
+void			sb(t_stack **b);
+void			ss(t_stack **a, t_stack **b);
+void			move_to_a(t_stack **a, t_stack **b);
+void			objetives_b(t_stack *a, t_stack *b);
+t_stack			*min_number(t_stack *b);
+void			update_b(t_stack *a, t_stack *b);
+void			pa(t_stack **a, t_stack **b);
 
 #endif

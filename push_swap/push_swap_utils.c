@@ -6,11 +6,21 @@
 /*   By: miguelgo <miguelgo@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 15:33:22 by miguelgo          #+#    #+#             */
-/*   Updated: 2024/04/16 20:46:31 by miguelgo         ###   ########.fr       */
+/*   Updated: 2024/04/17 18:05:52 by miguelgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+t_stack	*find_last(t_stack **stack)
+{
+	t_stack	*move;
+
+	move = *stack;
+	while (move->next)
+		move = move->next;
+	return (move);
+}
 
 void	free_stack(t_stack **stack)
 {

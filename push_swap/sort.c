@@ -6,7 +6,7 @@
 /*   By: miguelgo <miguelgo@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 19:05:10 by miguelgo          #+#    #+#             */
-/*   Updated: 2024/04/16 20:45:49 by miguelgo         ###   ########.fr       */
+/*   Updated: 2024/04/17 18:25:01 by miguelgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,22 @@ int	stack_len(t_stack *a)
 	return (len);
 }
 
+void	move_to_b(t_stack **a, t_stack **b)
+{
+	t_stack	*move;
+
+	move = get_cheapest(a);
+	if (move->upper == 2 && move->objetive->upper == 2)
+		rotate_two(a, b, move, 2);
+	if (move->upper == 1 && move->objetive->upper == 1)
+		rotate_two(a, b, move, 1);
+	update_position(*a);
+	update_position(*b);
+	move_to_upper(a, move, 'a');
+	move_to_upper(b, move->objetive, 'b');
+	pb(a, b);
+}
+
 void	sort(t_stack **a, t_stack **b)
 {
 	int		len;
@@ -56,7 +72,15 @@ void	sort(t_stack **a, t_stack **b)
 	while (len-- > 3)
 	{
 		update_a(*a, *b);
+		move_to_b(a, b);
 	}
+	last_three(a);
+	while (*b)
+	{
+		update_b(*a, *b);
+		move_to_a(a, b);
+	}
+	update_position(*a);
 }
 
 void	update_a(t_stack *a, t_stack *b)
