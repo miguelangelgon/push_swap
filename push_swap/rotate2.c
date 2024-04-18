@@ -6,7 +6,7 @@
 /*   By: miguelgo <miguelgo@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 16:11:39 by miguelgo          #+#    #+#             */
-/*   Updated: 2024/04/17 19:14:02 by miguelgo         ###   ########.fr       */
+/*   Updated: 2024/04/18 15:14:00 by miguelgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	reverse_rotate(t_stack **stack)
 	last->next = *stack;
 	last->back = NULL;
 	*stack = last;
-	last->next->back = last; 
+	last->next->back = last;
 }
 
 void	rra(t_stack	**a)

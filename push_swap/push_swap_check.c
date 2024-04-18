@@ -6,7 +6,7 @@
 /*   By: miguelgo <miguelgo@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 20:29:09 by miguelgo          #+#    #+#             */
-/*   Updated: 2024/04/17 18:06:21 by miguelgo         ###   ########.fr       */
+/*   Updated: 2024/04/18 15:46:47 by miguelgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int	ft_str_is_numeric(char *str)
+int	ft_str_is_numeric(char str)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
+	if (str < '0' || str > '9')
 	{
-		if (str[i] < '0' || str[i] > '9')
-		{
-			return (0);
-		}
-		i++;
+		return (0);
 	}
 	return (1);
 }

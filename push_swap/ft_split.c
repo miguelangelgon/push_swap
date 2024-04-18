@@ -6,7 +6,7 @@
 /*   By: miguelgo <miguelgo@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 16:31:11 by miguelgo          #+#    #+#             */
-/*   Updated: 2024/04/16 20:46:51 by miguelgo         ###   ########.fr       */
+/*   Updated: 2024/04/18 15:56:48 by miguelgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include "push_swap.h"
 
-static void	ft_free(char **res)
+void	ft_free(char **res)
 {
 	int	i;
 
@@ -24,7 +24,7 @@ static void	ft_free(char **res)
 	free(res);
 }
 
-static size_t	count_words(char const *s, char c)
+ size_t	count_words(char const *s, char c)
 {
 	size_t	i;
 	size_t	word;
@@ -40,7 +40,7 @@ static size_t	count_words(char const *s, char c)
 	return (word);
 }
 
-static char	**write_result(char const *s, char c, char **res)
+char	**write_result(char const *s, char c, char **res)
 {
 	size_t	start;
 	size_t	i;
@@ -74,6 +74,8 @@ char	**ft_split(char const *s, char c)
 	size_t	i;
 	char	**res;
 
+	if (!all_space(s))
+		return (0);
 	i = 0;
 	if (!s)
 		return (0);
@@ -83,3 +85,20 @@ char	**ft_split(char const *s, char c)
 	res = write_result(s, c, res);
 	return (res);
 }
+
+int	all_space(char const *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == ' ')
+			i++;
+		else
+			return (1);
+	}
+	return (0);
+}
+
+

@@ -6,7 +6,7 @@
 /*   By: miguelgo <miguelgo@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:36:14 by miguelgo          #+#    #+#             */
-/*   Updated: 2024/04/17 18:05:05 by miguelgo         ###   ########.fr       */
+/*   Updated: 2024/04/18 15:52:42 by miguelgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef struct s_stack
 
 }	t_stack;
 
-int				ft_str_is_numeric(char *str);
+int				ft_str_is_numeric(char str);
 int				check_duplicates(long *numbers);
 long			ft_atoi(const char *str);
 char			**ft_split(char const *s, char c);
@@ -81,5 +81,7 @@ void			objetives_b(t_stack *a, t_stack *b);
 t_stack			*min_number(t_stack *b);
 void			update_b(t_stack *a, t_stack *b);
 void			pa(t_stack **a, t_stack **b);
+void			last_step(t_stack **a);
+int				all_space(const char *s);
 
 #endif

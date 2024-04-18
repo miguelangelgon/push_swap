@@ -6,7 +6,7 @@
 /*   By: miguelgo <miguelgo@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:14:39 by miguelgo          #+#    #+#             */
-/*   Updated: 2024/04/17 18:47:54 by miguelgo         ###   ########.fr       */
+/*   Updated: 2024/04/18 15:12:16 by miguelgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,11 +67,26 @@ t_stack	*min_number(t_stack *b)
 	return (min);
 }
 
+void	last_step(t_stack **a)
+{
+	t_stack	*min;
+
+	min = min_number(*a);
+	if (min->upper == 2)
+	{
+		while (*a != min)
+			ra(a);
+	}
+	else if (min->upper == 1)
+	{
+		while (*a != min)
+			rra(a);
+	}
+}
+
 void	update_b(t_stack *a, t_stack *b)
 {
 	update_position(a);
 	update_position(b);
 	objetives_b(a, b);
-
-
 }

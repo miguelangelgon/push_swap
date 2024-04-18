@@ -6,7 +6,7 @@
 /*   By: miguelgo <miguelgo@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 11:31:00 by miguelgo          #+#    #+#             */
-/*   Updated: 2024/04/17 16:38:54 by miguelgo         ###   ########.fr       */
+/*   Updated: 2024/04/18 16:23:20 by miguelgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	**get_list(int argc, char **argv)
 	i = 0;
 	if (argc == 2)
 		list = ft_split(argv[1], ' ');
+	if (!ft_split(argv[1], ' '))
+		return (NULL);
 	else if (argc > 2)
 	{
 		list = malloc(argc * sizeof(char *));
@@ -47,6 +49,8 @@ long	*start(int argc, char **argv)
 
 	c = 0;
 	list = get_list(argc, argv);
+	if (!get_list(argc, argv))
+		return (0);
 	while (list[c] != '\0')
 	{
 		if (!check_digit(list[c]))
@@ -98,7 +102,11 @@ int	check_digit(char *list)
 
 	i = 0;
 	if (list[i] == '-' || list[i] == '+')
+	{
+		if (!ft_str_is_numeric(list[i +1]))
+			return (0);
 		i++;
+	}
 	while (list[i] != '\0')
 	{
 		if (!(list[i] >= '0' && list[i] <= '9'))

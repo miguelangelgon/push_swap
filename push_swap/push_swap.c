@@ -6,7 +6,7 @@
 /*   By: miguelgo <miguelgo@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 13:45:16 by miguelgo          #+#    #+#             */
-/*   Updated: 2024/04/17 18:30:44 by miguelgo         ###   ########.fr       */
+/*   Updated: 2024/04/18 16:22:50 by miguelgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,7 @@
 long	*initialize(int argc, char *argv[])
 {
 	long	*numbers;
-	int		i;
-	t_stack	*a;
-	t_stack	*b;
 
-	a = NULL;
-	b = NULL;
-	i = 0;
 	if (argc == 1)
 	{
 		write(1, "Error\n", 6);
@@ -36,6 +30,8 @@ long	*initialize(int argc, char *argv[])
 		write(1, "Error\n", 6);
 		return (NULL);
 	}
+	if (!start(argc, argv))
+		return (NULL);
 	if (!check_duplicates(numbers))
 	{
 		write(1, "Error\n", 6);
@@ -51,6 +47,11 @@ int	main(int argc, char *argv[])
 	t_stack	*a;
 	t_stack	*b;
 
+	i = 0;
+	a  = NULL;
+	b = NULL;
+	if (argv[1][0] == '\0')
+		return (0);
 	numbers = initialize(argc, argv);
 	if (!numbers)
 		return (0);
@@ -62,14 +63,6 @@ int	main(int argc, char *argv[])
 	free(numbers);
 	if (!(check_sort(&a)))
 		sort(&a, &b);
-	t_stack	*move;
-	move = a;
-	while (move)
-	{
-		printf("%i\n", move->number);
-		move = move->next;
-
-	}
 	free_stack(&a);
 	return (0);
 }
