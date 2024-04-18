@@ -6,7 +6,7 @@
 /*   By: miguelgo <miguelgo@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 19:05:10 by miguelgo          #+#    #+#             */
-/*   Updated: 2024/04/18 16:23:08 by miguelgo         ###   ########.fr       */
+/*   Updated: 2024/04/18 17:19:55 by miguelgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ void	move_to_b(t_stack **a, t_stack **b)
 void	sort(t_stack **a, t_stack **b)
 {
 	int		len;
-	t_stack	*move;
 
 	len = stack_len(*a);
 	update_position(*a);
@@ -71,7 +70,7 @@ void	sort(t_stack **a, t_stack **b)
 		pb(a, b);
 	if (len-- > 3)
 		pb(a, b);
-	while (len-- > 3)
+	while (len-- > 3 && !check_sort(a))
 	{
 		update_a(*a, *b);
 		move_to_b(a, b);

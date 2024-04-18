@@ -6,7 +6,7 @@
 /*   By: miguelgo <miguelgo@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:36:14 by miguelgo          #+#    #+#             */
-/*   Updated: 2024/04/18 15:52:42 by miguelgo         ###   ########.fr       */
+/*   Updated: 2024/04/18 17:18:04 by miguelgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,56 +32,83 @@ typedef struct s_stack
 
 }	t_stack;
 
-int				ft_str_is_numeric(char str);
-int				check_duplicates(long *numbers);
-long			ft_atoi(const char *str);
-char			**ft_split(char const *s, char c);
-static char		**write_result(char const *s, char c, char **res);
-static size_t	count_words(char const *s, char c);
-static void		ft_free(char **res);
-char			*ft_substr(char const *s, unsigned int start, size_t len);
-size_t			ft_strlen(const char *s);
-char			*ft_strdup(const char *s1);
-long			*start(int argc, char **argv);
-int				check_digit(char *list);
-void			fill_stack(t_stack **stack, int number);
-int				check_sort(t_stack **a);
-void			sort(t_stack **a, t_stack **b);
-int				stack_len(t_stack *a);
-void			update_position(t_stack *stack);
-void			free_stack(t_stack **stack);
-void			push(t_stack **src, t_stack **dest);
-void			pb(t_stack **a, t_stack **b);
-void			update_a(t_stack *a, t_stack *b);
-void			objetives_a(t_stack *a, t_stack *b);
-t_stack			*max_number(t_stack *b);
-void			calculate_cost(t_stack *a, t_stack *b);
-void			set_cheapest(t_stack *stack);
-t_stack			*find_last(t_stack **stack);
-void			rotate(t_stack **stack);
-void			move_to_upper(t_stack **stack, t_stack *cheapest,
-					char stack_name);
-void			move_to_b(t_stack **a, t_stack **b);
-void			ra(t_stack **a);
-void			rb(t_stack **b);
-void			rr(t_stack **a, t_stack **b);
-void			rotate_two(t_stack **a, t_stack **b, t_stack *cheapest, int c);
-void			reverse_rotate(t_stack **stack);
-void			rra(t_stack **a);
-void			rrb(t_stack **b);
-void			rrr(t_stack **a, t_stack **b);
-t_stack			*get_cheapest(t_stack **stack);
-void			last_three(t_stack **a);
-void			swap(t_stack **stack);
-void			sa(t_stack **a);
-void			sb(t_stack **b);
-void			ss(t_stack **a, t_stack **b);
-void			move_to_a(t_stack **a, t_stack **b);
-void			objetives_b(t_stack *a, t_stack *b);
-t_stack			*min_number(t_stack *b);
-void			update_b(t_stack *a, t_stack *b);
-void			pa(t_stack **a, t_stack **b);
-void			last_step(t_stack **a);
-int				all_space(const char *s);
+//atributes.c
+void	update_position(t_stack *stack);
+t_stack	*max_number(t_stack *b);
+void	calculate_cost(t_stack *a, t_stack *b);
+void	set_cheapest(t_stack *stack);
+void	objetives_a(t_stack	*a, t_stack *b);
+
+//ft_split.c
+void	ft_free(char **res);
+size_t	count_words(char const *s, char c);
+char	**write_result(char const *s, char c, char **res);
+char	**ft_split(char const *s, char c);
+int		all_space(char const *s);
+
+//last_three.c
+void	last_three(t_stack **a);
+int		number_list(char **list);
+
+//move_to_a.c
+void	move_to_a(t_stack **a, t_stack **b);
+void	objetives_b(t_stack	*a, t_stack *b);
+t_stack	*min_number(t_stack *b);
+void	last_step(t_stack **a);
+void	update_b(t_stack *a, t_stack *b);
+
+//push.c
+void	push(t_stack **src, t_stack **dest);
+void	pa(t_stack **a, t_stack **b);
+void	pb(t_stack **a, t_stack **b);
+
+//push_swap.c
+long	*initialize(int argc, char *argv[]);
+
+//push_swap_check.c
+int		ft_str_is_numeric(char str);
+long	ft_atoi(const char *str);
+t_stack	*get_cheapest(t_stack **stack);
+
+//push_swap_utils.c
+t_stack	*find_last(t_stack **stack);
+void	free_stack(t_stack **stack);
+char	*ft_strdup(const char *s1);
+size_t	ft_strlen(const char *s);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+
+//rotate.c
+void	rotate(t_stack **stack);
+void	ra(t_stack **a);
+void	rb(t_stack **b);
+void	rr(t_stack **a, t_stack **b);
+void	move_to_upper(t_stack **stack, t_stack *cheapest, char stack_name);
+
+//rotate2.c
+void	rotate_two(t_stack **a, t_stack **b, t_stack *cheapest, int c);
+void	reverse_rotate(t_stack **stack);
+void	rra(t_stack	**a);
+void	rrb(t_stack **b);
+void	rrr(t_stack **a, t_stack **b);
+
+//sort.c
+int		check_sort(t_stack **a);
+int		stack_len(t_stack *a);
+void	move_to_b(t_stack **a, t_stack **b);
+void	sort(t_stack **a, t_stack **b);
+void	update_a(t_stack *a, t_stack *b);
+
+//start.c
+char	**get_list(int argc, char **argv);
+long	*start(int argc, char **argv);
+void	fill_stack(t_stack **stack, int number);
+int		check_digit(char *list);
+int		check_duplicates(long *numbers);
+
+//swap.c
+void	swap(t_stack **stack);
+void	sa(t_stack **a);
+void	sb(t_stack **b);
+void	ss(t_stack **a, t_stack **b);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: miguelgo <miguelgo@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 13:45:16 by miguelgo          #+#    #+#             */
-/*   Updated: 2024/04/18 16:22:50 by miguelgo         ###   ########.fr       */
+/*   Updated: 2024/04/18 17:17:14 by miguelgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ int	main(int argc, char *argv[])
 	t_stack	*b;
 
 	i = 0;
-	a  = NULL;
+	a = NULL;
 	b = NULL;
-	if (argv[1][0] == '\0')
+	if (argc == 1 || argv[1][0] == '\0')
 		return (0);
 	numbers = initialize(argc, argv);
 	if (!numbers)

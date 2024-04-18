@@ -6,7 +6,7 @@
 /*   By: miguelgo <miguelgo@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 11:31:00 by miguelgo          #+#    #+#             */
-/*   Updated: 2024/04/18 16:23:20 by miguelgo         ###   ########.fr       */
+/*   Updated: 2024/04/18 17:15:37 by miguelgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ char	**get_list(int argc, char **argv)
 long	*start(int argc, char **argv)
 {
 	long	*numbers;
-	int		i;
 	int		c;
 	char	**list;
 
@@ -51,21 +50,18 @@ long	*start(int argc, char **argv)
 	list = get_list(argc, argv);
 	if (!get_list(argc, argv))
 		return (0);
-	while (list[c] != '\0')
-	{
-		if (!check_digit(list[c]))
-			return (0);
-		c++;
-	}
+	c = number_list(list);
+	if (!number_list(list))
+		return (0);
 	numbers = malloc((c + 1) * sizeof(long));
 	if (!numbers)
 		return (0);
-	i = 0;
 	numbers[c] = LONG_MAX;
-	while (list[i] != '\0')
+	c = 0;
+	while (list[c] != '\0')
 	{
-		numbers[i] = ft_atoi(list[i]);
-		i++;
+		numbers[c] = ft_atoi(list[c]);
+		c++;
 	}
 	free(list);
 	return (numbers);

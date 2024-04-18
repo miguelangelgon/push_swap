@@ -6,7 +6,7 @@
 /*   By: miguelgo <miguelgo@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 16:31:11 by miguelgo          #+#    #+#             */
-/*   Updated: 2024/04/18 15:56:48 by miguelgo         ###   ########.fr       */
+/*   Updated: 2024/04/18 17:16:57 by miguelgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_free(char **res)
 	free(res);
 }
 
- size_t	count_words(char const *s, char c)
+size_t	count_words(char const *s, char c)
 {
 	size_t	i;
 	size_t	word;
@@ -100,5 +100,3 @@ int	all_space(char const *s)
 	}
 	return (0);
 }
-
-
