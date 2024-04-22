@@ -6,12 +6,12 @@
 /*   By: miguelgo <miguelgo@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 21:27:50 by miguelgo          #+#    #+#             */
-/*   Updated: 2024/04/18 22:24:44 by miguelgo         ###   ########.fr       */
+/*   Updated: 2024/04/19 17:12:45 by miguelgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../mandatory/push_swap.h"
-#include "../get_next_line/get_next_line.h"
+#include "../gnl/get_next_line.h"
 
 void	read_lines(t_stack **a_bonus, t_stack **b_bonus)
 {

@@ -6,7 +6,7 @@
 /*   By: miguelgo <miguelgo@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 11:31:00 by miguelgo          #+#    #+#             */
-/*   Updated: 2024/04/18 22:30:35 by miguelgo         ###   ########.fr       */
+/*   Updated: 2024/04/22 22:37:43 by miguelgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,14 @@ char	**get_list(int argc, char **argv)
 
 	i = 0;
 	if (argc == 2)
-		list = ft_split(argv[1], ' ');
-	if (!ft_split(argv[1], ' '))
-		return (NULL);
-	else if (argc > 2)
 	{
-		list = malloc(argc * sizeof(char *));
+		list = ft_split(argv[1], ' ');
+		if (!list)
+			return (NULL);
+	}
+	else
+	{
+		list = malloc((argc) * sizeof(char *));
 		if (!list)
 			return (0);
 		count = 1;
@@ -46,16 +48,21 @@ long	*start(int argc, char **argv)
 	int		c;
 	char	**list;
 
-	c = 0;
 	list = get_list(argc, argv);
-	if (!get_list(argc, argv))
-		return (0);
+	if (!list)
+		return (0);	
 	c = number_list(list);
-	if (!number_list(list))
+	if (!c)
+	{
+		free_numbers(list);
 		return (0);
+	}
 	numbers = malloc((c + 1) * sizeof(long));
 	if (!numbers)
+	{
+		free_numbers(list);
 		return (0);
+	}
 	numbers[c] = LONG_MAX;
 	c = 0;
 	while (list[c] != '\0')
@@ -63,16 +70,17 @@ long	*start(int argc, char **argv)
 		numbers[c] = ft_atoi(list[c]);
 		c++;
 	}
-	free(list);
+	free_numbers(list);
 	return (numbers);
 }
+
 
 void	fill_stack(t_stack **stack, int number)
 {
 	t_stack	*last;
 	t_stack	*current;
 
-	last = malloc(sizeof(t_stack));
+	last = (t_stack *)malloc(sizeof(t_stack));
 	if (!last)
 		return ;
 	last->number = number;

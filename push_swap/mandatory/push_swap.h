@@ -6,7 +6,7 @@
 /*   By: miguelgo <miguelgo@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:36:14 by miguelgo          #+#    #+#             */
-/*   Updated: 2024/04/18 22:04:24 by miguelgo         ###   ########.fr       */
+/*   Updated: 2024/04/22 19:19:41 by miguelgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ int		all_space(char const *s);
 //last_three.c
 void	last_three(t_stack **a);
 int		number_list(char **list);
+void	free_numbers(char **numbers);
 
 //move_to_a.c
 void	move_to_a(t_stack **a, t_stack **b);
@@ -114,7 +115,7 @@ void	ss(t_stack **a, t_stack **b, int c);
 //BONUS
 //bonus_utils.c
 int		ft_strncmp(char *s1, char *s2, int n);
-void 	execute_operation(t_stack **a_bonus, t_stack **b_bonus, char *str);
+void	execute_operation(t_stack **a_bonus, t_stack **b_bonus, char *str);
 int		valid_operation(char *str);
 void	read_lines(t_stack **a_bonus, t_stack **b_bonus);
 

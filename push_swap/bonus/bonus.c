@@ -6,14 +6,14 @@
 /*   By: miguelgo <miguelgo@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 18:28:24 by miguelgo          #+#    #+#             */
-/*   Updated: 2024/04/18 22:24:02 by miguelgo         ###   ########.fr       */
+/*   Updated: 2024/04/22 19:26:45 by miguelgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include "../get_next_line/get_next_line.h"
+#include "../gnl/get_next_line.h"
 #include "../mandatory/push_swap.h"
 
 int	main(int argc, char *argv[])

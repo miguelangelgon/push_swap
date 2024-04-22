@@ -6,7 +6,7 @@
 #    By: miguelgo <miguelgo@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 18:43:05 by miguelgo          #+#    #+#              #
-#    Updated: 2024/04/18 22:00:12 by miguelgo         ###   ########.fr        #
+#    Updated: 2024/04/19 17:12:19 by miguelgo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ NAME2 = checker
 
 MANDATORY = mandatory/
 BONUS = bonus/
-GNL = get_next_line/
+GNL = gnl/
 
 SRC1 = $(MANDATORY)atributes.c $(MANDATORY)last_three.c $(MANDATORY)push.c $(MANDATORY)push_swap.c $(MANDATORY)push_swap_check.c $(MANDATORY)push_swap_utils.c $(MANDATORY)rotate.c $(MANDATORY)rotate2.c $(MANDATORY)start.c $(MANDATORY)ft_split.c $(MANDATORY)move_to_a.c $(MANDATORY)sort.c $(MANDATORY)swap.c
 SRC2 = $(BONUS)bonus.c $(MANDATORY)atributes.c $(MANDATORY)last_three.c $(MANDATORY)push.c $(MANDATORY)push_swap_check.c $(MANDATORY)push_swap_utils.c $(MANDATORY)rotate.c $(MANDATORY)rotate2.c $(MANDATORY)start.c $(MANDATORY)ft_split.c $(MANDATORY)move_to_a.c $(MANDATORY)sort.c $(MANDATORY)swap.c $(GNL)get_next_line.c $(GNL)get_next_line_utils.c $(BONUS)bonus_utils.c

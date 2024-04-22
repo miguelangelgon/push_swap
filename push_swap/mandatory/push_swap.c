@@ -6,7 +6,7 @@
 /*   By: miguelgo <miguelgo@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 13:45:16 by miguelgo          #+#    #+#             */
-/*   Updated: 2024/04/18 19:45:42 by miguelgo         ###   ########.fr       */
+/*   Updated: 2024/04/22 22:26:01 by miguelgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "push_swap.h"
+
+void	ft_leaks()
+{
+	system("leaks -q a.out");
+}
 
 int	main(int argc, char *argv[])
 {
@@ -23,6 +28,7 @@ int	main(int argc, char *argv[])
 	t_stack	*b;
 
 	i = 0;
+	atexit(ft_leaks);
 	a = NULL;
 	b = NULL;
 	if (argc == 1 || argv[1][0] == '\0')
