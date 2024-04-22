@@ -6,7 +6,7 @@
 /*   By: miguelgo <miguelgo@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 16:49:00 by miguelgo          #+#    #+#             */
-/*   Updated: 2024/04/22 22:34:23 by miguelgo         ###   ########.fr       */
+/*   Updated: 2024/04/22 23:08:06 by miguelgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,5 @@ void	free_numbers(char **numbers)
 		free(numbers[i]);
 		i++;
 	}
+	free(numbers);;
 }

@@ -6,7 +6,7 @@
 /*   By: miguelgo <miguelgo@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 11:31:00 by miguelgo          #+#    #+#             */
-/*   Updated: 2024/04/22 22:37:43 by miguelgo         ###   ########.fr       */
+/*   Updated: 2024/04/22 23:15:20 by miguelgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,13 +54,19 @@ long	*start(int argc, char **argv)
 	c = number_list(list);
 	if (!c)
 	{
-		free_numbers(list);
+		if (argc == 2)
+			free_numbers(list);
+		else
+			free(list);
 		return (0);
 	}
 	numbers = malloc((c + 1) * sizeof(long));
 	if (!numbers)
 	{
-		free_numbers(list);
+		if (argc == 2)
+			free_numbers(list);
+		else
+			free(list);
 		return (0);
 	}
 	numbers[c] = LONG_MAX;
@@ -70,7 +76,10 @@ long	*start(int argc, char **argv)
 		numbers[c] = ft_atoi(list[c]);
 		c++;
 	}
-	free_numbers(list);
+	if (argc == 2)
+		free_numbers(list);
+	else
+		free(list);
 	return (numbers);
 }
 
